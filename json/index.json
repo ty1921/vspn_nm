@@ -1,0 +1,54 @@
+{
+    "left": [
+            {
+                "title": "2018 KPL 比赛",
+                "img":"./images/rec/rec_video.jpg",
+                "live":1
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/rec_video.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/rec_video.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/rec_video.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/rec_video.jpg"
+            }
+        ],
+
+  "right1": [
+            {
+                "title": "2018 KPL 比赛",
+                "img":"./images/rec/rechead_03.png"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/rechead_03.png"
+            }
+        ],
+  "right2": [
+            {
+                "title": "2018 KPL 比赛",
+                "img":"./images/rec/center_1.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/center_1.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/center_1.jpg"
+            },
+            {
+                 "title": "2018 KPL 比赛",
+                "img":"./images/rec/center_1.jpg"
+            }
+        ]
+}

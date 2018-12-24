@@ -1,0 +1,320 @@
+﻿*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei";
+	list-style: none;
+	color: #FFFFFF;
+	/*text-overflow:ellipsis; */
+}
+
+ html,body{
+ 	width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+	/*隐藏滚轮*/
+	display: none;
+}
+
+a{
+    /*position: absolute;*/
+    margin: 0 auto;
+    display: block;
+    border: none;
+    text-decoration: none;
+    /*border:1px solid grey;*/
+}
+
+a:focus{
+    outline: none;
+    border:none;
+}
+img{
+    border:none;
+    width: 100%;
+    height: 100%;
+}
+div{
+    /*border:1px solid grey;*/
+}
+
+.clear{
+	clear: both;
+}
+
+.debug{
+/* 	min-width: 100px;
+min-height: 100px; */
+	border: 3px solid red;
+	box-sizing: border-box; 
+}
+
+.debug2{
+	border: 3px solid green;
+	box-sizing: border-box; 
+}
+
+.content{
+	width: 100%;
+	height: 100vh;
+	background-image: url(../images/BG.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+
+.class_cover {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,1));
+    color: #FFFFFF;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden;
+}
+
+
+.class_cover_small {
+	display:block;
+	padding:0 2%;
+	width: 96%;
+	height:40px;
+	line-height:20px;
+	text-align: left;
+    font-size: 0.8rem;
+    background: rgba(0,0,0, .8);
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+
+
+/*6 专区推荐页--------------------------------------------*/
+
+.recommend{
+	height: 100%;
+	background-image: url(../images/recommend/bg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.recommend .logo{
+    display: block;
+    width: 11%;
+    height: 14%;
+    position: absolute;
+    top: 9%;
+    left: 6%;
+}
+
+.navs{
+	display: block;
+    width: 14%;
+    height: 40%;
+    position: absolute;
+    background: rgba(0,0,0,.2);
+    top: 25%;
+    left: 5%;
+}
+
+.navs a{
+	display: table;
+	width: 100%;
+	height: 20%;
+	position: relative;
+	border-left: 3px solid #2E344A;
+	border-top: 1px solid #333B52;
+	border-bottom: 1px solid #333B52;
+}
+
+.navs a span{
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1.3rem;
+	color: #FFFFFF;
+}
+
+.navs a:hover,.navs a:focus, .navs a.on{
+	color:#EBD55E !important;
+	border-left: 3px solid #EBD55E;
+}
+
+.navs a:hover span, .navs a:focus span, .navs a.on span{
+	color:#EBD55E !important;
+}
+
+
+
+/*专区推荐1 热门推荐*/
+.recommend .free{
+	display: block;
+    width: 14%;
+    height: 17.5%;
+    position: absolute;
+    top: 69%;
+    left: 5%;
+}
+
+
+
+.r1_top_div{
+	height: 54.5%;
+}
+
+.r1_bottom_div{
+	margin-top: 2%;
+	height: 41%;
+}
+
+.rows_div{
+	/*border: 1px solid red;*/
+	float: left;
+	box-sizing: border-box; 
+	position: relative;
+	width: 16%;
+	height: 100%;
+	margin-right: 1.5%;
+	margin-bottom: 1%;
+	border: 3px solid transparent;
+}
+
+.rows_div img{
+	max-width: 100%;
+}
+
+
+.rows_last{
+	float: right;
+	margin-right: 0 !important;
+}
+
+.r1_top3{
+	position: relative;
+	width: 17.15%;
+	/*margin-right: 2%;*/
+}
+
+.r1_top3 img{
+	height: 100%;
+}
+
+.r1_mid3{
+	position: relative;
+	width: 32%;
+	margin-right: 2%;
+}
+
+
+.right .r_mid{
+	width: 13% !important;
+	margin-right: 2%;
+}
+
+
+.r1_bottom_div .r_mid_div,.r1_bottom_div .r_mid{
+	height: 100%;
+}
+
+.r1_bottom_div .r_mid{
+	width: 32% !important;
+	margin-right: 2% !important;
+}
+
+
+.rows_div:focus, .rows_div:hover,.rows_div.on{
+	border: 3px solid #EBD55E;
+	background-color: #EBD55E;
+	box-sizing: border-box;
+}
+
+.rows_div:focus .class_cover, .rows_div:hover .class_cover,.rows_div.on .class_cover{
+	background: #EBD55E;
+	color: #000000;
+}
+
+
+
+/* 专区推荐2 所有视频 */
+.recommend .right{
+	display: block;
+    width: 73%;
+    height: 75%;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    overflow: scroll;
+}
+
+.r2_div{
+	margin-bottom: 2%;
+}
+
+.r1_mid4{
+	position: relative;
+	width: 23.5%;
+	height: 45%;
+	margin-right: 2%;
+}
+
+
+/* 热门赛事页 */
+.recommend .hot{
+    height: 68%;
+}
+
+.hot_div{
+	height: 48%;
+	/*padding: 1% 0;*/
+	margin-bottom: 2%;
+}
+
+.r2_mid5{
+	position: relative;
+	width: 18.4%;
+	height: 100%;
+	margin-right: 2%;
+}
+
+
+
+.recommend .logo2{
+    display: block;
+    width: 8%;
+    height: 14%;
+    position: absolute;
+    top: 9%;
+    left: 8%;
+}
+
+.recommend .logo2_text{
+    display: block;
+    font-size: 32px;
+    width: 8%;
+    height: 7%;
+    position: absolute;
+    top: 12.5%;
+    left: 17%;
+}
