@@ -173,7 +173,7 @@ function traceLogProgramClick( code )
             'code': code,
             'refer': refer_id,
             'page_name': document.title,
-            'userID': userID
+            'userid': log_userID
         },
         type : "get",
         dataType : "jsonp",
@@ -214,19 +214,16 @@ function traceLogProgramClick( code )
  * @param  {[type]} code [description]
  * @return {[type]}      [description]
  */
-function traceLogPlayer( id, code )
+function traceLogPlayer( id, code, refer )
 {
     //上报给我方平台
     $.ajax({
        url : "./api/log.php",
        data:{
-            'type': epg_type, //1：vspn   2：game
             'action':'Play',
-            'page_id': id,  
-            'page_name': document.title,
             'code': code,
             'refer': refer,
-            'userID': userID
+            'userid': log_userID
         },
         type : "get",
         dataType : "jsonp",

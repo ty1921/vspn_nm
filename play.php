@@ -142,6 +142,7 @@ VSPN在电视端拥有王者荣耀赛事（IPTV独家）、英雄联盟系列赛
 <!-- js核心逻辑 开始 ---------------------------------------------->
 <script type="text/javascript">
 
+var refer = '<?php echo $refer; ?>';
 
 //var code = '<?php echo $code ?>';
 
@@ -155,7 +156,7 @@ $('#debug').html( $('#debug').html() + '<hr>播放视频：' + obj.global_code )
 
 
 
-/*    *
+/**
 1、获取节目code；
 2、根据节目code获取播放地址；
 3、替换播放地址，rtsp替换为http;
@@ -165,6 +166,8 @@ $('#debug').html( $('#debug').html() + '<hr>播放视频：' + obj.global_code )
 function getPlayURL(obj) 
 {
     var aidlToken = localStorage.getItem('aidlToken', -1 );
+
+    traceLogPlayer( '109', obj.global_code, refer );
 
     var mediaType="live";
 
@@ -327,13 +330,11 @@ window.onload = function(){
 
     var code = '<?php echo $code; ?>';
 
-    var refer = '<?php echo $refer; ?>';
-
     var live = '<?php echo $live; ?>';
 
     //300秒发送一次浏览日志
     traceLogBrowse( '109', code, refer );
-    
+
     setInterval(function(){
         traceLogBrowse( '109', code, refer );
     },300000);

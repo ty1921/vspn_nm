@@ -65,9 +65,8 @@ if( $action == 'Browse' )
 
     try
     {
-        //取主播同系列，不足6条则其他视频补起
-        $sql = "  INSERT INTO `log`(`type`,`page_id`,`page_name`,`action`,`code`,`userid`,`refer`,`logtime`)
-                       VALUES ($type,$page_id,'{$page_name}','{$action}','{$code}','{$userid}',$refer,'{$logtime}')
+        $sql = "  INSERT INTO `log`(`type`,`page_id`,`action`,`code`,`userid`,`refer`,`logtime`)
+                       VALUES ($type,$page_id,'{$action}','{$code}','{$userid}',$refer,'{$logtime}')
                ";
 
         $pdo->exec( $sql );
@@ -97,6 +96,49 @@ if( $action == 'Browse' )
 
 
 
+
+//============================================================
+//视频播放
+if( $action == 'Play' )
+{   
+    $code = $_REQUEST['code'];
+    
+    $userid = $_REQUEST['userid'];
+    
+    $refer = (int)$_REQUEST['refer'];
+
+    $logtime = date('Y-m-d H:i:s');
+
+    try
+    {
+        $sql = "  INSERT INTO `log_play`(`code`,`userid`,`refer`,`logtime`)
+                       VALUES ('{$code}','{$userid}',$refer,'{$logtime}')
+               ";
+
+        $pdo->exec( $sql );
+        
+        $id = $pdo->lastInsertId();
+        
+        if( $id > 0 )
+        {
+            $res = array ('code'=>1,'msg'=>'success','sql'=>$sql,'time'=>time() );
+
+            exit( $back . json_encode($res) . ')' );
+        }
+        else
+        {
+            $res = array ('code'=>404,'msg'=>'report failed','time'=>time() );
+
+            exit( $back . json_encode($res) . ')' );
+        }
+    }
+    catch(PDOException $ex) 
+    {
+        $res = array ('code'=>9006,'msg'=>'report exception'.$ex->getMessage(),'time'=>time());
+        
+        exit( $back . json_encode($res) . ')' );
+    }
+}
 
 //===============================================================
 //action error!
