@@ -97,21 +97,21 @@ function getToken()
  * [traceLogBrowse 界面浏览探针上报，每300秒的定时器]
  * @param  {[type]} id        [页面编号，自定义即可]
  * @param  {[type]} code      [详情页节目ID，列表页传页面编号]
- * @param  {[type]} refer_id  [上一页的页面编号，首页为空]
+ * @param  {[type]} refer  [上一页的页面编号，首页为空]
  * @return null          
  */
-function traceLogBrowse( id, code, refer_id='' )
+function traceLogBrowse( id, code, refer='' )
 {
     //上报给我方平台
     $.ajax({
        url : "./api/log.php",
        data:{
             'type': epg_type, //1：vspn   2：game
-            'action':'Player',
+            'action':'Browse',
             'page_id': id,  
             'page_name': document.title,
             'code': code,
-            'refer': refer_id,
+            'refer': refer,
             'userid': log_userID
         },
         type : "get",
@@ -138,9 +138,9 @@ function traceLogBrowse( id, code, refer_id='' )
             "mediacode": code,
             "pageId": id,
             "referType": "0",
-            "refer_page_id": refer_id,
+            "refer_page_id": refer,
             "refer_pos_id": id + '||' + code,
-            "refer_page_name": refer_id,
+            "refer_page_name": refer,
             "page_name": document.title,
             "medianame": code,
             "refer_pos_name": "",
@@ -167,7 +167,7 @@ function traceLogProgramClick( code )
        url : "./api/log.php",
        data:{
             'type': epg_type, //1：vspn   2：game
-            'action':'ProgramClick',
+            'action':'Program',
             'page_id': id,  
             'page_name': document.title,
             'code': code,
@@ -210,23 +210,22 @@ function traceLogProgramClick( code )
 
 //===============================================================================
 /**
- * [traceLogPlayer description]
+ * [traceLogPlayer 视频播放日志]
  * @param  {[type]} code [description]
  * @return {[type]}      [description]
  */
-function traceLogPlayer( code )
+function traceLogPlayer( id, code )
 {
     //上报给我方平台
     $.ajax({
        url : "./api/log.php",
        data:{
             'type': epg_type, //1：vspn   2：game
-            'action':'LogPlayer',
+            'action':'Play',
             'page_id': id,  
             'page_name': document.title,
             'code': code,
-            'refer': refer_id,
-            'page_name': document.title,
+            'refer': refer,
             'userID': userID
         },
         type : "get",

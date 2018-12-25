@@ -19,23 +19,23 @@
     <!-- text -->
     <div class='live_div'> 
 
-        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000065948'>
+        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000065948&refer=100'>
             最强王者
         </a>
 
-        <a id='live_title' class='live_title live_title2' href='./play.php?code=04710001000000100000000000016823'>
+        <a id='live_title' class='live_title live_title2' href='./play.php?code=04710001000000100000000000016823&refer=100'>
             小苍吃鸡萌新宝典
         </a>
 
-        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000016830'>
+        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000016830&refer=100'>
             全军出击天天贱
         </a>
 
-        <a id='live_title' class='live_title live_title2' href='./play.php?code=04710001000000100000000000070663'>
+        <a id='live_title' class='live_title live_title2' href='./play.php?code=04710001000000100000000000070663&refer=100'>
             夏明子解说
         </a>
 
-        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000071281'>
+        <a id='live_title' class='live_title' href='./play.php?code=04710001000000100000000000071281&refer=100'>
             英雄联盟S8全球小组赛 
         </a>
     
@@ -48,13 +48,13 @@
 <div class='right_div'>
     
     <div class='r_top_div'>
-        <a class='r_top' href='./play.php?code=04710001000000100000000000070040'>
+        <a class='r_top' href='./play.php?code=04710001000000100000000000070040&refer=100'>
             <img src='./images/index2/r1.jpg' /> 
             <span class='class_cover'>LPL夏季赛</span> 
         </a>
 
 
-        <a class='r_top r_top_right' href='./play.php?code=04710001000000100000000000065948'>
+        <a class='r_top r_top_right' href='./play.php?code=04710001000000100000000000065948&refer=100'>
             <img src='./images/index2/r2.jpg' /> 
             <span class='class_cover'>最强王者</span> 
         </a>
@@ -72,22 +72,22 @@
 </style>
 
     <div class='r_mid_div'>
-        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000071280'>
+        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000071280&refer=100'>
             <img src='./images/index2/m1.jpg'> 
             <span class='class_cover'>英雄联盟S8全球入围赛</span> 
         </a>
 
-        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000070434'>
+        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000070434&refer=100'>
             <img src='./images/index2/m2.jpg'> 
             <span class='class_cover'>英雄联盟季中冠军杯</span> 
         </a>
 
-        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000070007'>
+        <a class='r_mid r_index' href='./play.php?code=04710001000000100000000000070007&refer=100'>
             <img src='./images/index2/m3.jpg'> 
             <span class='class_cover'>PCPI绝地求生中国赛</span> 
         </a>
 
-        <a class='r_mid r_index r_mid_4' href='./play.php?code=04710001000000100000000000070015'>
+        <a class='r_mid r_index r_mid_4' href='./play.php?code=04710001000000100000000000070015&refer=100'>
             <img src='./images/index2/m4.jpg'> 
             <span class='class_cover'>剑网3九周年发布会</span> 
         </a>
@@ -146,6 +146,15 @@ $('.r_top,.r_mid,.r_bottom').focus(function(){
 
 });
 
+
+window.onload = function(){ 
+    //300秒发送一次浏览日志
+    traceLogBrowse( '100', '', 'main' );
+    
+    setInterval(function(){
+        traceLogBrowse( '100', '', 'main' );
+    },300000);
+}
 
 /*
 //获取游戏推荐

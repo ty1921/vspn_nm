@@ -88,6 +88,13 @@
 
 window.onload = function(){ 
 
+    //300秒发送一次浏览日志
+    traceLogBrowse( '1020', '', 'recommend' );
+    
+    setInterval(function(){
+        traceLogBrowse( '1020', '', 'recommend' );
+    },300000);
+
     var game = '<?php echo $game; ?>';
 
     $.ajax({
@@ -111,7 +118,7 @@ window.onload = function(){
 
                for (var i =0; i < len; i++) 
                {
-                    $('#p' + i ).attr( "href", "./play.php?code=" + json.data[i].code );
+                    $('#p' + i ).attr( "href", "./play.php?refer=1020&code=" + json.data[i].code );
 
                     $('#p' + i ).html( "<img src='"+json.data[i].img+"'> <span class='class_cover'>"+json.data[i].title+"</span>" );
 

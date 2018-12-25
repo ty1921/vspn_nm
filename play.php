@@ -1,21 +1,15 @@
 <?php 
     
-    include 'head_sub.php';
+  include 'head_sub.php';
 
-    //视频对应编码
-    $code = $_REQUEST['code'];
+  //视频对应编码
+  $code = $_REQUEST['code'];
 
-    if( empty($code) )
-    {
-        //编码异常的情况，如何处理？
-        
-    }
+  $live = (int)$_REQUEST['live'];
 
+  $refer = (int)$_REQUEST['refer'];
 
-    $live = (int)$_REQUEST['live'];
-
-    $times = time() . mt_rand(100,999);
-
+  $times = time() . mt_rand(100,999);
 ?>
 
 <!-- 通用二级播放页面 -->
@@ -314,7 +308,7 @@ window.document.onkeypress = function(event){
     
     if(val==8)
     {
-        if ( document.referrer == '' || document.referrer.indexOf("play.php")>-1 ) 
+        if ( refer == 109 || document.referrer == '' || document.referrer.indexOf("play.php")>-1 ) 
         {
           window.location.href = './';
         }
@@ -333,9 +327,17 @@ window.onload = function(){
 
     var code = '<?php echo $code; ?>';
 
+    var refer = '<?php echo $refer; ?>';
+
     var live = '<?php echo $live; ?>';
 
-    traceLogBrowse( '109', code, 'play' );
+    //300秒发送一次浏览日志
+    traceLogBrowse( '109', code, refer );
+    
+    setInterval(function(){
+        traceLogBrowse( '109', code, refer );
+    },300000);
+        
 
     $.ajax({
        url : "./api/code.php",
@@ -394,7 +396,7 @@ window.onload = function(){
 
                     $('.play_select_div').html( $('.play_select_div').html() + 
 
-                     "<a href='./play.php?code=" + json.data[i].code + "' class='select_div " + last + "'> \
+                     "<a href='./play.php?refer=109&code=" + json.data[i].code + "' class='select_div " + last + "'> \
                         <img src='" + json.data[i].img + "'> \
                         <div class='more_text'> " + json.data[i].title + " </div> \
                       </a>");

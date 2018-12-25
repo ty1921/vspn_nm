@@ -35,6 +35,13 @@
 
 window.onload = function(){ 
 
+    //300秒发送一次浏览日志
+    traceLogBrowse( '1021', '', 'recommend' );
+    
+    setInterval(function(){
+        traceLogBrowse( '1021', '', 'recommend' );
+    },300000);
+
     var game = '<?php echo $game; ?>';
 
     $.ajax({
@@ -77,7 +84,7 @@ window.onload = function(){
                         json.data[i].img = './images/nopic.jpg';
                     }
 
-                    html += "   <a class='rows_div r1_mid4 "+ last +"' href='./play.php?code="+ json.data[i].code +"' style='height: " + img_height + "px;'>\
+                    html += "   <a class='rows_div r1_mid4 "+ last +"' href='./play.php?refer=1021&code="+ json.data[i].code +"' style='height: " + img_height + "px;'>\
                                     <img src='"+ json.data[i].img +"'> \
                                         <span class='class_cover '>"+ json.data[i].title +"</span>\
                                 </a>";

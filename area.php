@@ -193,6 +193,18 @@ function mousePosition(ev)
 */
     };
 
+
+window.onload = function(){ 
+    //300秒发送一次浏览日志
+    traceLogBrowse( '102', '', 'area' );
+    
+    setInterval(function(){
+        traceLogBrowse( '102', '', 'area' );
+    },300000);
+}
+
+
+
 </script>
 
 

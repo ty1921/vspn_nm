@@ -46,8 +46,8 @@ require './conn.php';
 
 
 //============================================================
-//节目点击探针发送
-if( $action == 'Player' )
+//页面点击，等同pv
+if( $action == 'Browse' )
 {
     $type = (int)$_REQUEST['type'];
     
