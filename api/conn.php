@@ -2,7 +2,7 @@
 
 try
 {
-    $pdo = new PDO( 'mysql:host=localhost;dbname=vspn', 'h5', '58137161' );
+    $pdo = new PDO( 'mysql:host=localhost;dbname=****', '****', '****' );
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
