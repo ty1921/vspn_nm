@@ -31,10 +31,7 @@
     <!-- 上右 -->
     <div class="play_right">
         <div class="title"> &nbsp;   </div>
-        <div class="desc"> VSPN（Versus Programming Network）成立于2015年，电竞运营商， [2]  以电竞赛事和泛娱乐内容运营为核心业务，提供品牌营销、艺人经纪、电竞电视、电竞运动场馆运营等综合服务 [3]  。
-通过与腾讯、英雄互娱等领先游戏厂商的合作，VSPN直接拥有赛事的运营权，有别与以往的被动服务于游戏厂商的承办方。VSPN除了获得TGA腾讯移动游戏大奖赛、HPL英雄联赛的独家运营权，还承办了首届KPL王者荣耀职业联赛。 [4] 
-举办了王者荣耀、穿越火线、英雄联盟、绝地求生、皇室战争、球球大作战、炉石传说、FIFA Online 3、全民枪战、DNF等竞技游戏。 [5] 
-VSPN在电视端拥有王者荣耀赛事（IPTV独家）、英雄联盟系列赛事、穿越火线系列赛事等顶级电竞赛事版权 [6]  。  </div>
+        <div class="desc">  &nbsp; </div>
         <div class="tag"> &nbsp;  </div>
         <!-- <div> 
             <a class="btn" href="#" onclick="tips();">
