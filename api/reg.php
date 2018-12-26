@@ -4,7 +4,26 @@
  * 用户注册上报接口
  */
 
-require './head_api.php';
+error_reporting(E_ALL && ~E_NOTICE); 
+//error_reporting(E_ALL); 
+//error_reporting(0);
+
+ini_set('display_errors', TRUE);
+
+ini_set('display_startup_errors', TRUE);
+
+//encode
+header('Content-type:application/javascript;charset=utf-8');
+
+setlocale(LC_ALL, 'en_US.UTF8');
+
+date_default_timezone_set('PRC');
+
+//session
+session_start();
+
+//anti_sql_inject
+require 'anti_sql_inject.php';
 
 
 //===============================================================
@@ -34,7 +53,9 @@ $pid 	  = $_REQUEST["pid"];
 
 $version  = $_REQUEST["version"];
 
-$addtime = date('Y-m-d H:i:s');
+$regtime  = date('Y-m-d H:i:s');
+
+$regtime2 = gmdate('D M d H:i:s Y', time() + 3600 * 8 );
 
 
 if( empty($channel) || empty($deviceid)  ) 
@@ -44,21 +65,25 @@ if( empty($channel) || empty($deviceid)  )
     exit( json_encode($res) );
 }
 
-require './conn.php';
+require './pdo.php';
 
 try
 {
 	//生成临时id
-	$userid = '玩家' . str_rand();
+	$nickname = '玩家' . str_rand();
 
 	$avatar = 'http://www.oneh5.com/iptv/images/avatar.jpg';
 
 	$token  = md5( $userid );
 
+	$gender = round( mt_rand(0,10) / 10 );
+
 
     $sql = "  INSERT INTO `member`(`token`,`nickname`,`avatar`,`gender`,`mac`,`deviceid`,`channel`,`pid`,`regtime`)
                    VALUES ('$token','$nickname','{$avatar}',{$gender},'{$mac}','{$deviceid}','{$channel}','{$pid}','{$regtime}')
            ";
+
+    //echo $sql;
 
     $pdo->exec( $sql );
     
@@ -69,14 +94,15 @@ try
     				'gender' =>$gender , 
     				'mac' =>$mac , 
     				'nickname' =>$nickname , 
-    				'regtime' =>$regtime , 
+    				'regtime' => $regtime2, 
     				'token' =>$token , 
     				'userid' =>$userid
     			 );
+
     
-    if( $id > 0 )
+    if( $userid > 0 )
     {
-        $res = array ('status'=>0,'data'=>$data );
+        $res = array ('data'=>$data, 'status'=>0 );
 
         exit( json_encode($res) );
     }
@@ -102,7 +128,7 @@ catch(PDOException $ex)
  * @param string $char 组成随机字符串的字符串
  * @return string $string 生成的随机字符串
  */
-function str_rand($length = 8, $char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+function str_rand($length = 8, $char = '2356789abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ') {
     if(!is_int($length) || $length < 0) {
         return false;
     }
