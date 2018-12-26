@@ -9,8 +9,8 @@ require('./pdo.php');
 
 
 
-$game_id = $_REQUEST['game_id'];
-$user_id = $_REQUEST['user_id'];
+$game_id = $_REQUEST['gameid'];
+$user_id = $_REQUEST['userid'];
 
 if( empty($game_id) || empty($user_id) )
 {
