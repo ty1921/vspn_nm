@@ -72,7 +72,7 @@ $nav = (int)$_GET['nav'];
 
         <a id="nav1" href='main.php?nav=1' class="nav <?php if($nav==1) echo 'now'; ?> " >  推荐 </a>
         
-        <a id="nav2" href='area.php?nav=2' class="nav <?php if($nav==2) echo 'now'; ?> ">  专区 </a>
+        <a id="nav2" href='area.php?nav=2' class="nav <?php if($nav==2) echo 'now'; ?> ">  精品 </a>
 
         <a id="nav3" href='match.php?nav=3' class="nav <?php if($nav==3) echo 'now'; ?> ">  赛事 </a>
 
@@ -83,8 +83,6 @@ $nav = (int)$_GET['nav'];
         <!-- <a id="nav6" href='search.php?nav=6' class="nav ">  搜索 </a> -->
 
         <!-- <a id="nav7" href='http://oneh5.com/iptv/' class="nav ">  游戏 </a> -->
-
-        <!-- <a id="nav7" href='./pay.php?code=04710001000000100000000000016823&img=./images/area2/a3/4.jpg&title=小苍吃鸡萌新宝典#' class="nav ">  鉴权 </a> -->
 
         <div class="clear"></div>
 
