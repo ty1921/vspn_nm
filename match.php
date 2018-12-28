@@ -117,7 +117,7 @@ html { font-size: 75%; // 12px }
             </li>
             
             <li>
-                <a class=" r_mid" href="./play.php?refer=103&code=04710001000000100000000000071664">
+                <a class=" r_mid" href="./play.php?refer=103&code=04710001000000100000000000070007">
                     <img src="./images/live2/m2.jpg"> 
                     <span class="class_cover num2">PCPI绝地求生总决赛</span>
                 </a>
